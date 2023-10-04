@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert Data into faculty  SQLite database</title>
+    <style>
+        #facid
+        {
+            max-width:200px;
+            position:relative;
+            left:100px;
+            max-height:800px;
+            border-radius:10px; 
+        }
+        #name
+        {
+            position: relative;
+            left:32px;
+            border-radius:10px;
+        }
+        #username
+        {
+            position: relative;
+            left:10px;
+            border-radius:10px;
+        }
+        #password
+        {
+            position: relative;
+            left:10px;
+            border-radius:10px;
+
+        }
+        #email
+        {
+            position: relative;
+            left:40px;
+            border-radius:10px;
+
+        }
+        #faddress
+        {
+            position: relative;
+            left:25px;
+            border-radius:10px;
+            color:red;
+        }
+        #submit
+        {
+            position: relative;
+            left:10px;
+            border-radius:10px;
+            padding:10px;
+        }
+        #submit:hover
+        {
+            cursor:pointer;
+            background-color:black;
+            color:white;
+        }
+        .fd
+        {
+            text-align: center;
+            max-width:400px;
+            position:relative;
+            left:590px;
+            padding:2px;
+            border-radius:10px;
+        }
+        .fc
+        {
+            border:2px solid black;
+            border-radius:10px;
+        }
+        .logout
+        {
+         position: absolute;
+         right:5px;
+         top:125px;
+         color:black;
+         font-weight: bold;
+         border:2px solid black;
+         padding:3px;
+         font-size: 20px;
+         border-radius:10px;
+        }
+        .logout:hover
+        {
+         background-color:black;
+         color:white;
+         font-weight: bold;
+        }
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    
+      <!-- Check if the submission was successful and display a message -->
+      {% if submission_successful %}
+      <div class="alert alert-success">
+          Faculty details have been successfully submitted!
+      </div>
+      {% endif %}
+      <div>
+        <img src="static/sreyasheader.jpg"  width="100%" height="110px">
+    </div>
+    <h4 style="position:sticky;">Hello Admin..... Insert Faculty Details </h4>
+    <a class="logout" href="{{ url_for('logout')}}">Logout</a> 
+    <hr> 
+    <div class="fd">
+    <form method="POST" action="/insertf-data" class="fc" enctype="multipart/form-data">
+
+        <label for="facid" style="color:red;text-decoration:underline;font-weight: bold;">FACULTY_ID::</label>
+        <input type="number"  class="form-control" id="facid" name="facid" required><br>
+        <label for="fusername" style="color:red;text-decoration:underline;font-weight: bold;">USERNAME::</label>
+        <input type="text" id="username" name="fusername" required><br>
+        <br>
+        <label for="fpassword" style="color:red;text-decoration:underline;font-weight: bold;">PASSWORD::</label>
+        <input type="password" id="password" name="fpassword" minlength="8" required><br>
+        <br>
+
+        <label for="fname" style="color:red;text-decoration:underline;font-weight: bold;">NAME::</label>
+        <input type="text" id="name" name="fname" required><br>
+        <br>
+        <label for="fdepartement" style="color:red;text-decoration:underline;font-weight: bold;">DEPARTMENT</label>
+        <input type="text" id="department" style="border-radius:10px;" name="fdepartment" required><br>
+        <br>
+        <label for="fdesignation" style="color:red;text-decoration:underline;font-weight: bold;">DESIGNATION</label>
+        <input type="text" id="designation" style="border-radius:10px;" name="fdesignation" required><br>
+        <br>
+        <label for="fmobilenumber" style="color:red;text-decoration:underline;font-weight: bold;">MOBNUMBER</label>
+        <input type="number" style="border-radius:10px;" id="mobilenumber" name="fmobilenumber" required><br>
+        <br>
+        
+        <label for="femail" style="color:red;text-decoration:underline;font-weight: bold;">Email::</label>
+        <input type="email" id="email" name="femail" required><br>
+        <br>
+        <label for="fspecifiaction" style="color:red;text-decoration:underline;font-weight: bold;">SPECIFIN-ON:</label>
+        <input type="text" id="specifiaction" style="border-radius:10px;" name="fspecification"><br>
+        <br>
+        <label for="faddress" style="color:red;text-decoration:underline;font-weight: bold;">ADDRESS:</label>
+        <input type="text" id="faddress" name="faddress" required><br>
+        <br>
+        <input type="submit" id="submit" value="Submit" href="/">
+    </form>
+</div>
+</body>
+</html>

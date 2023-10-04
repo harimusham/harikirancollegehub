@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <style>
+            .adlog
+            {
+                position:relative;
+                left:600px;
+                top:50px;
+                border:2px solid black;
+                border-radius:20px;
+                max-width:300px;
+                padding:20px;
+            }
+            #submit
+            {
+                position:relative;
+                left:100px;
+                padding:10px;
+            }
+            #ausername
+            {
+                position:relative;
+                left:40px;
+                padding:10px;
+                border-radius:10px;
+                border:5px solid black;
+
+            }
+            #apassword
+            {
+                position:relative;
+                left:40px;
+                padding:10px;
+                border-radius:10px;
+                border:5px solid black;
+            }
+            #submit:hover
+            {
+                cursor:pointer;
+                background-color:black;
+                color:white;
+                border-radius:10px;
+
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div>
+            <img src="static/sreyasheader.jpg"  width="100%" height="110px">
+        </div>
+        <h2>Welcome......to admin login</h2>
+        <div class="adlog">
+        <form method="POST" action="/admin-login">
+            <label for="ausername">USERNAME::</label>
+            <input type="text" name="ausername" id="ausername" required>
+            <br>
+            <label for="apassword">PASSWORD::</label>
+            <input type="text" name="apassword" id="apassword" required>
+            <br>
+            <br>
+            <input type="submit" id="submit" value="Submit" href="/">
+        </form>
+        </div>
+    </body>
+</html>
+
+            
